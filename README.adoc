@@ -1,6 +1,6 @@
 = Run & open GraphiQL
 
-Run application and open GraphiQL ar http://localhost:8080/graphiql?path=/graphql
+Run application and open GraphiQL at http://localhost:8080/graphiql?path=/graphql
 
 == What is GraphiQL?
 GraphiQL is the GraphQL integrated development environment (IDE). It offers syntax highlighting, intellisense autocompletion, automatic documentation, and much more.
