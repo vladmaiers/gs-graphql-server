@@ -1,0 +1,16 @@
+query blogs {
+    blogs {
+        id
+        title
+        content
+        creator {
+            id
+            firstname
+            email
+            yearOfBirth
+        }
+        comments {
+            content
+        }
+    }
+}

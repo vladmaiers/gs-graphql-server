@@ -1,3 +1,12 @@
+= Run & open GraphiQL
+
+Run application and open GraphiQL ar http://localhost:8080/graphiql?path=/graphql
+
+== What is GraphiQL?
+GraphiQL is the GraphQL integrated development environment (IDE). It offers syntax highlighting, intellisense autocompletion, automatic documentation, and much more.
+
+'''
+
 :spring_version: current
 :project_id: gs-graphql-server
 :icons: font
@@ -236,20 +245,20 @@ For the full details, see the https://docs.spring.io/spring-graphql/reference/te
 
 Let's write a controller slice test that verifies the same `bookDetails` query requested in the GraphiQL playground a few moments ago.
 
-Add the following to a test file `BookControllerTests.java`. Save this file in a location within the `src/test/java/com/example/graphqlserver/` folder.
+Add the following to a test file `UserControllerTest.java`. Save this file in a location within the `src/test/java/com/example/graphqlserver/` folder.
 
 [source,java]
 ----
-include::complete/src/test/java/com/example/graphqlserver/BookControllerTests.java[]
+include::complete/src/test/java/com/example/graphqlserver/UserControllerTest.java[]
 ----
 
 This test refers to a GraphQL query similar to what we used in the GraphiQL Playground.
 It's parameterized with an `$id` to make it reusable.
-Add this query in a `bookDetails.graphql` file located in `src/test/resources/graphql-test`.
+Add this query in a `firstUser.graphql` file located in `src/test/resources/graphql-test`.
 
 [source,graphql]
 ----
-include::complete/src/test/resources/graphql-test/bookDetails.graphql[]
+include::complete/src/test/resources/graphql-test/firstUser.graphql[]
 ----
 
 Run the test and verify that the result is identical to the GraphQL query manually requested in the GraphiQL Playground.

@@ -1,16 +1,66 @@
 type Query {
-    bookById(id: ID): Book
+    # User
+    users: [User!]!
+    user(id: ID!): User
+    firstUser: User!
+    usersBy(firstNamePart: String!): [User!]!
+    usersByStatus(status: Status!): [User!]!
+
+    # Blog
+    blogs: [Blog!]!
+    blog(id: ID!): Blog
+    firstBlog: Blog!
+    blogsBy(filter: BlogFilter!): [Blog!]
+
+    # Comment
+    comments: [Comment!]!
 }
 
-type Book {
-    id: ID
-    name: String
-    pageCount: Int
-    author: Author
+type Mutation {
+    add(user: UserInput): User
 }
 
-type Author {
-    id: ID
-    firstName: String
-    lastName: String
+type User {
+    id: ID!
+    firstname: String!
+    email: String
+    yearOfBirth: Int
+    status: Status!
+    blogs: [Blog!]!
+    comments: [Comment!]!
+}
+
+enum Status {
+    REGISTERED,
+    ACTIVE,
+    DISABLED,
+    EXPIRED
+}
+
+input UserInput {
+    firstname: String!
+    email: String
+    yearOfBirth: Int
+}
+
+type Blog {
+    id: ID!
+    title: String!
+    content: String!
+    published: Boolean!
+    creator: User!
+    comments: [Comment!]!
+}
+
+input BlogFilter {
+    title: String
+    content: String
+    published: Boolean
+}
+
+type Comment {
+    id: ID!
+    content: String!
+    blog: Blog!
+    commentator: User!
 }

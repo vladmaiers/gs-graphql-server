@@ -1,0 +1,13 @@
+query firstUser {
+    firstUser {
+        id
+        firstname
+        email
+        yearOfBirth
+        blogs {
+            id
+            title
+            content
+        }
+    }
+}

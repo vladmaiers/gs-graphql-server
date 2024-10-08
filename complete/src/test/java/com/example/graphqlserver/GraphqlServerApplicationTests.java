@@ -8,6 +8,7 @@ class GraphqlServerApplicationTests {
 
 	@Test
 	void contextLoads() {
+		//contextLoads
 	}
 
 }
